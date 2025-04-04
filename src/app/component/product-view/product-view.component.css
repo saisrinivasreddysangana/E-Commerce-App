@@ -1,0 +1,92 @@
+.iphone-container {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #1d1d1f;
+}
+
+.iphone-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.iphone-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.iphone-model {
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #f5f5f7;
+    transition: transform 0.3s ease;
+}
+
+.iphone-model:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.iphone-model h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.price-section {
+    margin-top: 15px;
+}
+
+.starting-from {
+    font-size: 14px;
+    color: #86868b;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+
+.iphone-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.iphone-link a {
+    color: #06c;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.iphone-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .iphone-pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .iphone-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .iphone-title {
+        font-size: 28px;
+    }
+}
