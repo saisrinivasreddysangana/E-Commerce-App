@@ -1,19 +1,49 @@
-.iphone-container {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #1d1d1f;
+/* Header Bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
 }
 
+/* Brand Title (Aptronix) */
 .iphone-title {
     text-align: center;
     font-size: 32px;
     font-weight: 600;
-    margin-bottom: 40px;
-    color: #000;
+    color: purple;
+    margin: 20px 0;
+    width: 100%;
 }
 
+/* Logout Button */
+.logout-button {
+    background: transparent;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Container */
+.iphone-container {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #1d1d1f;
+}
+
+/* Grid layout */
 .iphone-pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -21,6 +51,7 @@
     justify-content: center;
 }
 
+/* Card Styling */
 .iphone-model {
     text-align: center;
     padding: 25px;
@@ -58,26 +89,19 @@
     color: #000;
 }
 
-.iphone-link {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.iphone-link a {
-    color: #06c;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 400;
-}
-
-.iphone-link a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
     .iphone-pricing-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iphone-title {
+        text-align: center;
     }
 }
 
@@ -85,7 +109,7 @@
     .iphone-pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .iphone-title {
         font-size: 28px;
     }
