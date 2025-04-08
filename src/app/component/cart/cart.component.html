@@ -1,0 +1,7 @@
+<h2>Your Cart</h2>
+<div *ngFor="let item of cartItems" class="cart-item">
+  <div>{{ item.name }}</div>
+  <div>₹{{ item.price }}</div>
+  <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item.name, item.quantity)">
+  <button (click)="removeItem(item.name)">Remove</button>
+</div>

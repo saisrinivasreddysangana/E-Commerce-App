@@ -1,75 +1,43 @@
-<div class="iphone-container">  
-    <div class="header">
-      <h1 class="iphone-title">Aptronix</h1>
-      <button class="logout-button" (click)="logout()">Logout</button>
-    </div>
-  
-    <div class="iphone-pricing-grid">
-      <!-- iPhone 16 Series -->
-      <div class="iphone-model">
-        <h2>iPhone 16e</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹59,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 16</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹74,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 16 Plus</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹84,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 16 Pro</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹112,900.00</p>
-        </div>
-      </div>
-  
-      <!-- iPhone 15 Series -->
-      <div class="iphone-model">
-        <h2>iPhone 15</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹69,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 15 Plus</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹79,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 15 Pro</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹129,900.00</p>
-        </div>
-      </div>
-  
-      <div class="iphone-model">
-        <h2>iPhone 15 Pro Max</h2>
-        <div class="price-section">
-          <p class="starting-from">STARTING FROM</p>
-          <p class="price">₹159,900.00</p>
-        </div>
-      </div>
-    </div>
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmdCUXbCCGC54SygwjWlcsPZioUjDpYLeSeA&s" alt="Aptronix Logo" class="logo" />
+    <span class="brand-text">India’s Local Apple Expert</span>
   </div>
-  
+  <ul class="nav-menu">
+    <li>Shop</li>
+    <li>Loyalty</li>
+    <li>Service</li>
+    <li>Training</li>
+    <li>Events</li>
+    <li>Stores</li>
+    <li>Contact Us</li>
+    <li>Business Solutions</li>
+  </ul>
+  <div class="nav-icons">
+    <i class="material-icons">search</i>
+    <div class="cart-icon-wrapper" (click)="goToCart()">
+    <i class="material-icons">shopping_bag</i>
+    <span class="cart-badge" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+    </div>
+    <i class="material-icons">account_circle</i>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="iphone-container">  
+  <div class="header">
+    <h1 class="iphone-title">Happy Purchase...</h1>
+  </div>
+
+
+<div class="iphone-pricing-grid">
+  <div class="iphone-model" *ngFor="let product of products">
+    <h2>{{ product.name }}</h2>
+    <div class="price-section">
+      <p class="starting-from">STARTING FROM</p>
+      <p class="price">₹{{ product.price | number }}</p>
+    </div>
+    <button class="add-cart-btn" (click)="addToCart(product)">Add to Cart</button>
+  </div>
+</div>
+</div>
