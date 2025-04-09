@@ -9,11 +9,21 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'products', component: ProductViewComponent, canActivate: [AuthGuard] },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  {
+    path: 'payment',
+    loadComponent: () =>
+      import('./component/payment/payment.component').then((m) => m.PaymentComponent),
+  },
+  {
+    path: 'checkout-success',
+    loadComponent: () =>
+      import('./component/checkout-success/checkout-success.component').then((m) => m.CheckoutSuccessComponent),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

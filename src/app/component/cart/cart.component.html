@@ -1,7 +1,33 @@
-<h2>Your Cart</h2>
-<div *ngFor="let item of cartItems" class="cart-item">
-  <div>{{ item.name }}</div>
-  <div>₹{{ item.price }}</div>
-  <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item.name, item.quantity)">
-  <button (click)="removeItem(item.name)">Remove</button>
+<div class="cart-container">
+  <h2>Your Cart</h2>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <span>{{ item.name }}</span>
+      <span>₹{{ item.totalPrice }}</span>
+      <input
+        type="number"
+        [(ngModel)]="item.quantity"
+        (change)="updateQuantity(item.name, item.quantity)"
+        min="1"
+      />
+      <button (click)="removeItem(item.name)">Remove</button>
+    </div>
+
+    <div class="cart-total">
+      Total: ₹{{ getTotalAmount() }}
+    </div>
+
+    <button
+      class="checkout-btn"
+      [disabled]="cartItems.length === 0"
+      (click)="checkout()"
+    >
+      Checkout
+    </button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is currently empty.</p>
+  </ng-template>
 </div>

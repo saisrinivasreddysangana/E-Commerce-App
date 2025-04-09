@@ -1,0 +1,25 @@
+<div class="payment-container">
+  <h2 class="payment-title">Payment Information</h2>
+
+  <form #paymentForm="ngForm" (ngSubmit)="submitPayment(paymentForm)" class="payment-form">
+    <label>Card Number</label>
+    <input type="text" name="cardNumber" [(ngModel)]="cardNumber" required minlength="16" maxlength="16" />
+    <div class="error" *ngIf="paymentForm.submitted && paymentForm.controls['cardNumber']?.invalid">
+      Card number is required and must be 16 digits.
+    </div>
+
+    <label>Expiry Date</label>
+    <input type="text" name="expiry" [(ngModel)]="expiry" required placeholder="MM/YY" />
+    <div class="error" *ngIf="paymentForm.submitted && paymentForm.controls['expiry']?.invalid">
+      Expiry date is required.
+    </div>
+
+    <label>CVV</label>
+    <input type="password" name="cvv" [(ngModel)]="cvv" required minlength="3" maxlength="4" />
+    <div class="error" *ngIf="paymentForm.submitted && paymentForm.controls['cvv']?.invalid">
+      CVV is required (3 or 4 digits).
+    </div>
+
+    <button type="submit">Pay Now</button>
+  </form>
+</div>

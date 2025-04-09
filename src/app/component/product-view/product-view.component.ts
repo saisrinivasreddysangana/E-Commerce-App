@@ -22,7 +22,26 @@ export class ProductViewComponent implements OnInit {
     { name: 'iPhone 15', price: 69900 },
     { name: 'iPhone 15 Plus', price: 79900 },
     { name: 'iPhone 15 Pro', price: 129900 },
-    { name: 'iPhone 15 Pro Max', price: 159900 }
+    { name: 'iPhone 15 Pro Max', price: 159900 },
+    { name: 'iPhone 14', price: 64900 },
+    { name: 'iPhone 14 Plus', price: 74900 },
+    { name: 'iPhone 14 Pro', price: 109900 },
+    { name: 'iPhone 14 Pro Max', price: 139900 },
+    { name: 'iPhone SE', price: 42900 },
+    { name: 'iPhone 13', price: 59900 },
+    { name: 'iPhone 13 Mini', price: 69900 },
+    { name: 'iPhone 13 Pro', price: 99900 },
+    { name: 'iPhone 13 Pro Max', price: 129900 },
+    { name: 'iPhone 12', price: 54900 },
+    { name: 'iPhone 12 Mini', price: 64900 },
+    { name: 'iPhone 12 Pro', price: 89900 },
+    { name: 'iPhone 12 Pro Max', price: 109900 },
+    { name: 'iPhone 11', price: 49900 },
+    { name: 'iPhone 11 Pro', price: 89900 },
+    { name: 'iPhone 11 Pro Max', price: 109900 },
+    { name: 'iPhone XR', price: 49900 },
+    { name: 'iPhone XS', price: 89900 },
+    { name: 'iPhone XS Max', price: 109900 }
   ];
   constructor(
     private authService: AuthService,
